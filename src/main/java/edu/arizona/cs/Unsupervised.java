@@ -16,11 +16,9 @@ import java.util.Scanner;
 
 public class Unsupervised {
     String questionFile = "";
-    Hashtable<String, ArrayList<Double>> wordMap = null;
 
     public Unsupervised(String qName){
         this.questionFile = qName;
-        this.wordMap = new Hashtable<String, ArrayList<Double>>();
     }
 
     public ArrayList<Double> findVectorForWord(String word) {
@@ -60,57 +58,6 @@ public class Unsupervised {
         return  sList;
     }
 
-//    public void readGloveFile() {
-//        try {
-//            BufferedReader inputScanner = new BufferedReader(new FileReader(this.gloveFile));
-////            File file = new File(this.gloveFile);
-////            Scanner inputScanner = new Scanner(file);
-//            int lineCount = 0;
-//            Boolean isFirstWord;
-//            ArrayList<Double> iList = null;
-//            this.wordMap.put("unknown", new ArrayList<Double>());
-//            String firstWord = "(unknown)";
-//
-//            String cLine = inputScanner.readLine();
-//            while (cLine != null) {
-////            while (inputScanner.hasNextLine()) {
-////                String cLine = inputScanner.nextLine();
-//                String[] cLineSplit = cLine.split("\\s+");
-//                isFirstWord = true;
-//                iList = new ArrayList<Double>();
-//                for(String ce : cLineSplit) {
-//                    if(lineCount == 0) {
-//                        if(isFirstWord) {
-//                            isFirstWord = false;
-//                        } else {
-//                            iList.add(Double.parseDouble(ce));
-//                        }
-//                    } else {
-//                        if(isFirstWord) {
-//                            firstWord = ce;
-//                            isFirstWord = false;
-//                        } else {
-//                            iList.add(Double.parseDouble(ce));
-//                        }
-//                    }
-//                }
-//                this.wordMap.put(firstWord, iList);
-//                cLine = inputScanner.readLine();
-//                lineCount += 1;
-////                if(lineCount > 5000) break;
-//            }
-//            inputScanner.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//    private ArrayList<Double> findVectorForWord(String word) {
-//        ArrayList<Double> ret = null;
-//        ret = this.wordMap.get(word);
-//        if(ret == null) ret = this.wordMap.get("(unknown)");
-//        return ret;
-//    }
     // it will do a + b and store into a
     private void addVectors(ArrayList<Double> a, ArrayList<Double> b) {
         for (int i = 0; i < a.size(); ++i) {
