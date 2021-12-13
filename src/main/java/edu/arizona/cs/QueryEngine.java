@@ -254,7 +254,7 @@ public class QueryEngine {
 
     public static void main(String[] args ) {
 //        try {
-        String helpText = "arg[0] should be the path for the index directory \n" +
+        String helpText = "" +
                 "arg[0] -\n" +
                 " -- 0 to index wiki data, arg[1] should be the path for the index directory, arg[2] should be the path for the wiki directory \n" +
                 " -- 1 to query with questions with all indexes, arg[1] should be the path for the index directory, arg[2] should be the file containing " +
